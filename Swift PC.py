@@ -53,7 +53,7 @@ while True:
                 if int(xpos) > 161:
                     y = y + 1
                     swift.set_position(150, int(y), 150, speed = 5000)
-                if int(xpose) <159 and int xpose > 161
+                if int(xpos) > 159 and int(xpos) < 161:
+                    swift.set_position(150, int(y), -112, speed = 5000)
     except:
         x=x
-
