@@ -12,7 +12,7 @@ thresholds = [(30, 100, 15, 127, 15, 127)] # generic_blue_thresholds
 # You may pass up to 16 thresholds above. However, it's not really possible to segment any
 # scene with 16 thresholds before color thresholds start to overlap heavily.
 
-uart = UART(3, 115200, timeout_char = 1000)
+uart = UART(3, 250000, timeout_char = 1000)
 cpufreq.set_frequency(cpufreq.CPUFREQ_216MHZ)
 sensor.reset()
 sensor.set_pixformat(sensor.RGB565)
