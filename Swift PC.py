@@ -15,7 +15,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), '../..'))
 from uf.wrapper.swift_api import SwiftAPI
 from uf.utils.log import *
 
-ser = serial.Serial('COM5', baudrate=115200)
+ser = serial.Serial('COM5', baudrate=250000)
 
 #logger_init(logging.VERBOSE)
 #logger_init(logging.DEBUG)
@@ -63,18 +63,19 @@ while True:
                                         xpos = line[:w]
                                         ypos = line[w+2:len(line)]
                                         print(xpos,",", ypos)
-                                        if int(ypos) < 119:
-                                            x = x - 1
-                                            swift.set_position(int(x), int(y), 150, speed = 5000)       
-                                        if int(ypos) > 121:
-                                            x = x + 1
-                                            swift.set_position(int(x), int(y), 150, speed = 5000)                            
-                                        if int(ypos) > 119 and int(ypos) < 121:
-                                            swift.set_position(int(x), int(y), -112, speed = 5000)
-                                            exitloop = 1
+                                if int(ypos) < 119:
+                                    x = x - 1
+                                    swift.set_position(int(x), int(y), 150, speed = 5000)
+                                elif int(ypos) > 121:
+                                    x = x + 1
+                                    swift.set_position(int(x), int(y), 150, speed = 5000)                            
+                                elif int(ypos) > 119 and int(ypos) < 121:
+                                    swift.set_position(int(x), int(y), -112, speed = 5000)
+                                    exitloop = 1
                             except:
                                 x=x                    
     except:
         x=x
+
 
 
