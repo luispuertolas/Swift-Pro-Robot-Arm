@@ -1,11 +1,4 @@
-#!/usr/bin/env python3
-# Software License Agreement (BSD License)
-#
-# Copyright (c) 2017, UFactory, Inc.
-# All rights reserved.
-#
-# Author: Duke Fong <duke@ufactory.cc>
-
+#Author: Luis Andrés Puértolas Bálint and Taqi Abrar
 
 import sys, os, serial
 from time import sleep
